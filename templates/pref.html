@@ -1,0 +1,32 @@
+<style>
+        .container{
+             padding-top: 15px;
+        }
+
+    #id_name{
+        width:100%
+        }
+
+    #id_message{
+        width:100%
+        }
+
+    #id_email{
+        width:100%
+        }
+</style>
+
+<div class="container ">
+    <h1>Do you want to get email updates of people you follow?</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+
+       
+        {{ form.as_p }}
+        
+     
+        <button type="reset" class="btn btn-secondary">Reset</button>
+         <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

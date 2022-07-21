@@ -1,0 +1,34 @@
+{% load static %}
+<head>
+	<link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/color.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="../static/css/styles2.css">
+	<script src="https://kit.fontawesome.com/d08bb3046f.js" crossorigin="anonymous"></script>
+
+</head>
+<h1> Edit Post </h1>
+<section id="capsule">
+    <div class="container">
+    
+        <a class="img" href="{{post.image.url}}">
+            <img src="{{post.image.url}}" alt="">
+        </a>
+        
+        <div class="caption">
+            <a href="/profile/{{post.user}}"><strong>{{post.user}}</strong></a> {{post.caption}}
+        </div>
+
+        
+    
+    </div>
+</section>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form}}
+        <button type="submit"><i class="fa fa-search fa-1x"></i></button>
+
+    </form>
+</div>
